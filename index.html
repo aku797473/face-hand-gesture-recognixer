@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MediaPipe Tasks — Face + Hand Gesture Drawing</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Face + Hand Gesture Drawing (MediaPipe Tasks)</h1>
+    <div class="controls">
+      <button id="startBtn">Start</button>
+      <button id="stopBtn" disabled>Stop</button>
+      <button id="clearBtn">Clear</button>
+
+      <label>Color: <input id="colorPicker" type="color" value="#ff0000"></label>
+      <label>Brush: <input id="brushSize" type="range" min="1" max="40" value="4"></label>
+
+      <label><input id="pinchToggle" type="checkbox" checked> Pinch draw</label>
+      <label><input id="smileToggle" type="checkbox" checked> Smile draw</label>
+    </div>
+  </header>
+
+  <main>
+    <div class="video-wrap">
+      <video id="video" autoplay playsinline muted></video>
+      <canvas id="landmark" class="overlay"></canvas>
+      <canvas id="drawing" class="overlay"></canvas>
+    </div>
+    <p class="note">Pinch (thumb+index) to draw, smile to draw (if enabled). Show thumbs-down to clear (gesture). If something still doesn't detect, open the browser console for errors.</p>
+  </main>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
